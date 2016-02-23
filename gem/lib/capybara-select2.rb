@@ -17,14 +17,7 @@ module Capybara
       end
 
       # Open select2 field
-      if select2_container.has_selector?(".select2-selection")
-        # select2 version 4.0
-        select2_container.find(".select2-selection").click
-      elsif select2_container.has_selector?(".select2-choice")
-        select2_container.find(".select2-choice").click
-      else
-        select2_container.find(".select2-choices").click
-      end
+      select2_container.first(".select2-selection, .select2-choice, .select2-choices").click
 
       if options.has_key? :search
         find(:xpath, "//body").find(".select2-search input.select2-search__field").set(value)
