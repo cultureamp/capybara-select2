@@ -19,24 +19,18 @@ module Capybara
       # Open select2 field
       select2_container.first(".select2-selection, .select2-choice, .select2-choices").click
 
+      body = find(:xpath, "//body")
+
       if options.has_key? :search
-        find(:xpath, "//body").find(".select2-search input.select2-search__field").set(value)
+        body.find(".select2-search input.select2-search__field").set(value)
         page.execute_script(%|$("input.select2-search__field:visible").keyup();|)
-        drop_container = ".select2-results"
-      elsif find(:xpath, "//body").has_selector?(".select2-dropdown")
-        # select2 version 4.0
-        drop_container = ".select2-dropdown"
+        drop_container = body.find(".select2-results")
       else
-        drop_container = ".select2-drop"
+        drop_container = body.first(".select2-dropdown, .select2-drop")
       end
 
       [value].flatten.each do |value|
-        if find(:xpath, "//body").has_selector?("#{drop_container} li.select2-results__option")
-          # select2 version 4.0
-          find(:xpath, "//body").find("#{drop_container} li.select2-results__option", text: value).click
-        else
-          find(:xpath, "//body").find("#{drop_container} li.select2-result-selectable", text: value).click
-        end
+        drop_container.first("li.select2-results__option, li.select2-result-selectable", text: value).click
       end
     end
   end
