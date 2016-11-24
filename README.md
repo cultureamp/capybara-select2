@@ -1,6 +1,6 @@
 # Capybara::Select2
 
-Culture Amp fork maintained by @sentience. We’d prefer to contribute our changes back into the [original source](https://github.com/goodwill/capybara-select2), but it seems unmaintained as of November 24, 2016.
+Culture Amp fork maintained by [@sentience](https://github.com/sentience). We’d prefer to contribute our changes back into the [original source](https://github.com/goodwill/capybara-select2), but it seems unmaintained as of November 24, 2016.
 
 [![Code Climate](https://codeclimate.com/github/goodwill/capybara-select2.png)](https://codeclimate.com/github/goodwill/capybara-select2)
 
