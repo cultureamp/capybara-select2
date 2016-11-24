@@ -1,5 +1,7 @@
 # Capybara::Select2
 
+Culture Amp fork maintained by @sentience. We’d prefer to contribute our changes back into the [original source](https://github.com/goodwill/capybara-select2), but it seems unmaintained as of November 24, 2016.
+
 [![Code Climate](https://codeclimate.com/github/goodwill/capybara-select2.png)](https://codeclimate.com/github/goodwill/capybara-select2)
 
 All this gem does is something very simple- allow you to trigger select2 dropdown to select the value you want. The original select doesn't with the javascript overrides, so this new helper method does only this thing.
@@ -66,11 +68,3 @@ If select2 field has [tags](http://ivaynberg.github.io/select2/#tags) option you
 ```ruby
 select2_tag('value', from: 'Label of input')
 ```
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
